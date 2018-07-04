@@ -1,3 +1,4 @@
+<%@page import="com.model.Operations_Interface"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,7 +14,8 @@
 	<jsp:setProperty property="*" name="u" />
 
 	<%
-		int i = Operations.update(u);
+	Operations_Interface operation=new Operations();
+		int i = operation.update(u);
 		response.sendRedirect("viewusers.jsp");
 	%>
 </body>

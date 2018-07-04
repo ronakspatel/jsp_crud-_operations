@@ -1,3 +1,4 @@
+<%@page import="com.model.Operations_Interface"%>
 <%@page import="com.model.Operations"%>
 <%@page import="com.bean.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -14,7 +15,8 @@
 	<jsp:useBean id="u" class="com.bean.User"></jsp:useBean>
 	<jsp:setProperty property="*" name="u" />
 
-	<%int i=Operations.save(u);
+	<%Operations_Interface operation=new Operations();
+	int i=operation.save(u);
 	if(i>0){
 		response.sendRedirect("adduser-success.jsp");
 	}else{

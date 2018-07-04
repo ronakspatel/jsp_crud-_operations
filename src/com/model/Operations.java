@@ -10,9 +10,9 @@ import java.util.List;
 import com.Util.UtilityHelper;
 import com.bean.User;
 
-public class Operations{
-
-	public static int save(User u) {
+public class Operations implements Operations_Interface{
+	@Override
+	public int save(User u) {
 		int status = 0;
 		Connection con =UtilityHelper.getConnection();
 		PreparedStatement ps;
@@ -31,7 +31,7 @@ public class Operations{
 		return status;
 	}
 
-	public static int update(User u) {
+	public  int update(User u) {
 		int status = 0;
 		Connection con =UtilityHelper.getConnection();
 		try {
@@ -52,7 +52,7 @@ public class Operations{
 		return status;
 	}
 
-	public static int delete(User u) {
+	public  int delete(User u) {
 		int status = 0;
 		Connection con =UtilityHelper.getConnection();
 		try {
@@ -67,7 +67,7 @@ public class Operations{
 		return status;
 	}
 
-	public static List<User> getAllRecords() {
+	public  List<User> getAllRecords() {
 		List<User> list=new ArrayList<User>();
 		Connection con=UtilityHelper.getConnection();
 		try {
@@ -91,7 +91,7 @@ public class Operations{
 		return list;
 	}
 
-	public  static User getRecordById(int id) {
+	public   User getRecordById(int id) {
 		User u=null;
 		Connection con=UtilityHelper.getConnection();
 		try {
